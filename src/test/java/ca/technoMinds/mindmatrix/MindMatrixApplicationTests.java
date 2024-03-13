@@ -1,4 +1,4 @@
-package ca.richard.mindmatrix;
+package ca.technoMinds.mindmatrix;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
