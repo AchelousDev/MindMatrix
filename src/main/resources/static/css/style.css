@@ -1,0 +1,120 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* overflow: hidden; Commented out to enable scrolling */
+}
+
+#startup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
+    background-color: #000; /* Example background color */
+    color: #fff; /* Example text color */
+    opacity: 1; /* Start fully visible */
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+    overflow: hidden; /* Ensure content does not overflow during transition */
+}
+
+#logo {
+    font-size: 5em;
+    color: #fff;
+    transform: scale(4);
+    transition: transform 0.5s ease-out;
+}
+
+
+#main-content {
+    visibility: hidden; /* Hidden until animation is complete */
+    opacity: 0;
+    transition: visibility 0s, opacity 1.5s linear;
+    height: 100%;
+}
+
+/* Once the user scrolls, the following class will be added to the elements */
+.scrolled #logo {
+    transform: scale(1); /* Reset scale to normal */
+}
+
+.scrolled #main-content {
+    visibility: visible;
+    opacity: 1;
+    overflow: auto; /* Allow scrolling after animation */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    margin-bottom: 50px;
+}
+
+nav ul li {
+    padding: 15px 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+.hero {
+    background: #e9e9e9;
+    padding: 100px 0;
+}
+
+.service-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#program-form label, #program-form select {
+    margin: 10px;
+    padding: 5px;
+}
+
+#program-form button {
+    margin: 10px;
+    padding: 10px;
+}
+
+.service {
+    width: 30%;
+    padding: 20px;
+    background: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .service {
+        width: 100%;
+    }
+}
+
+/* Style to hide the startup screen */
+.hidden #startup {
+    opacity: 0;
+    visibility: hidden;
+}
