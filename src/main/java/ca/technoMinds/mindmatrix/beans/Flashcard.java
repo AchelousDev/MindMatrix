@@ -1,6 +1,6 @@
 package ca.technoMinds.mindmatrix.beans;
 
-public class Flahscards {
+public class Flashcard {
 
 	private String question;
 	private String answer;
