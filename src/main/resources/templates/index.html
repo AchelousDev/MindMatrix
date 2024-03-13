@@ -1,67 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>MindMatrix</title>
-	<link rel="stylesheet" href="/css/style.css">
-	<script src="/js/script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindMatrix</title>
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/script.js" defer></script>
 </head>
 <body>
 
-<div id="startup">
-	<h1 id="logo">MindMatrix</h1>
-</div>
+	<div id="startup">
+		<h1 id="logo">MindMatrix</h1>
+	</div>
 
-<main id="main-content">
-	<nav>
-		<ul>
-			<li><a href="#home">Home</a></li>
-			<li><a href="#services">Services</a></li>
-			<li><a href="#about">About</a></li>
-			<li><a href="#contact">Contact</a></li>
-		</ul>
-	</nav>
-	<section id="home" class="hero">
-		<h1>Welcome to MindMatrix</h1>
-		<p>Your journey into the world of knowledge begins here.</p>
-	</section>
+	<main id="main-content">
+		<nav>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<section id="home" class="hero">
+			<h1>Welcome to MindMatrix</h1>
+			<p>Your journey into the world of knowledge begins here.</p>
+		</section>
 
-	<section id="services">
-		<h2>Select Your Program</h2>
-		<div class="service-container">
-			<form id="program-form">
-				<label for="program-select">Program:</label>
-				<select id="program-select" name="program">
-					<option value="">--Please choose an option--</option>
-					<option value="program1">Program 1</option>
-					<option value="program2">Program 2</option>
-					<!-- Add more programs as options here -->
-				</select>
-
-				<label for="course-select">Course:</label>
-				<select id="course-select" name="course" disabled>
-					<!-- Options will be populated based on program selection -->
-				</select>
-
-				<button type="submit">Submit</button>
+		<section id="services">
+			<!-- Update the form in the programForm.html file -->
+			<!-- Replace the existing form with this one -->
+			<form id="program-form" action="/createFlashcard" method="post">
+				<label for="search">Search for a Subject:</label> <input type="text"
+					id="search" name="subject" required>
+				<button type="submit">Generate Flashcard</button>
 			</form>
-		</div>
-	</section>
 
-	<section id="about">
-		<h2>About Us</h2>
-		<p>Learn more about our mission, our team, and our methodology.</p>
-	</section>
-	<section id="contact">
-		<h2>Contact Us</h2>
-		<p>Get in touch with us to start your learning journey today.</p>
-		<!-- Contact form or details can go here -->
-	</section>
-	<footer>
-		<p>&copy; 2024 MindMatrix. All rights reserved.</p>
-	</footer>
-</main>
+			</div>
+		</section>
+
+		<section id="about">
+			<h2>About Us</h2>
+			<p>Learn more about our mission, our team, and our methodology.</p>
+		</section>
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<p>Get in touch with us to start your learning journey today.</p>
+			<!-- Contact form or details can go here -->
+		</section>
+		<footer>
+			<p>&copy; 2024 MindMatrix. All rights reserved.</p>
+		</footer>
+	</main>
 
 
 </body>
