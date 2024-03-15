@@ -95,11 +95,19 @@ nav ul li a:hover {
 
 /* Individual service styling */
 .service {
-	width: 30%;
+	text-align: center;
+	width: 40%; /* Adjust the width as needed */
 	padding: 20px;
 	background: #f7f7f7;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	margin: 10px;
+}
+
+/* Responsive styling for smaller screens */
+@media ( max-width : 768px) {
+	.service {
+		width: 80%; /* Adjust the width for smaller screens */
+	}
 }
 
 /* Program form styling */
