@@ -6,6 +6,7 @@ body, html {
 	font-family: 'Arial', sans-serif;
 }
 
+
 /* Styling for the startup screen */
 #startup {
 	display: flex;
@@ -45,25 +46,35 @@ body, html {
 	opacity: 1;
 	overflow: auto;
 }
-
 /* Navigation styling */
+nav {
+	position: fixed; /* Fix the navigation to stay in place */
+	left: 0; /* Align the navigation to the left side */
+	top: 190px; /* Add some space from the top of the page */
+	background-color: #333;
+	height: calc(100% - 50px);
+	/* Make the navigation span the remaining height of the viewport */
+	width: 150px; /* Set a fixed width for the navigation */
+	padding: 20px 0; /* Adjust padding as needed */
+}
+
 nav ul {
 	list-style: none;
 	padding: 0;
-	display: flex;
-	justify-content: center;
-	background-color: #333;
-	margin-bottom: 20px;
+	margin: 0;
 }
 
 nav ul li {
-	padding: 15px 30px;
+	padding: 15px 0; /* Adjust padding as needed */
+	text-align: center; /* Center align the text */
 }
 
 nav ul li a {
 	text-decoration: none;
 	color: #fff;
 	transition: color 0.3s ease;
+	display: block;
+	/* Display links as block elements to occupy full width */
 }
 
 nav ul li a:hover {
@@ -111,35 +122,57 @@ nav ul li a:hover {
 }
 
 /* Program form styling */
-#program-form label, #program-form select {
-	margin: 10px;
-	padding: 5px;
+#program-form label, #program-form input, #program-form button {
+	margin: 10px auto; /* Center the elements horizontally */
 	display: block;
+}
+
+#program-form {
+	text-align: center; /* Center align the form */
+	position: relative; /* Remove absolute positioning */
+	max-width: 400px; /* Set a maximum width for better visibility */
+	margin: 0 auto; /* Center the form horizontally */
 }
 
 #program-form button {
 	margin: 10px;
 	padding: 10px;
-	background-color: navy;
+	background-color: navy; /* Original button color */
 	color: #fff;
 	border: none;
 	cursor: pointer;
-	transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease; /* Add transition effect */
 }
 
 #program-form button:hover {
 	background-color: #001f3f; /* Darker shade of navy on hover */
 }
 
-/* Footer styling */
-footer {
-	background-color: #333;
-	color: white;
-	padding: 20px 0;
-	position: relative;
-	bottom: 0;
-	width: 100%;
+#program-form button {
+	display: inline-block; /* Display the button as inline-block */
 }
+
+.bottom-sections-container {
+	position: fixed; /* Fix the container to stay in place */
+	bottom: 0; /* Align the container to the bottom of the viewport */
+	left: 0; /* Align the container to the left side */
+	width: 100%;
+	/* Make the container span the full width of the viewport */
+	background-color: #c0c0c0; /* Set background color */
+	padding: 20px; /* Add padding as needed */
+	color: black; /* Set text color */
+}
+
+ /* Footer styling */
+    .footer {
+        background-color: navy; /* Set background color same as the header */
+        color: white;
+        padding: 10px 0;
+        position: absolute; /* Position the footer */
+        bottom: 0; /* Align the footer to the bottom */
+        width: 100%; /* Make the footer span the full width */
+        text-align: center; /* Center align text */
+    }
 
 /* Responsive styling for smaller screens */
 @media ( max-width : 768px) {
