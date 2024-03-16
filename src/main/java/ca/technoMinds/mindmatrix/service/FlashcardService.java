@@ -25,7 +25,7 @@ public class FlashcardService {
 
     public List<Flashcard> generateFlashcards(String subject) {
         String apiUrl = "https://api.openai.com/v1/completions";
-        String apiKey = ""; 
+        String apiKey = "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"; 
         String prompt = "Generate a question and answer about " + subject + ":";
         
         String requestBody = "{\"prompt\": \"" + prompt + "\", \"max_tokens\": 100}";
