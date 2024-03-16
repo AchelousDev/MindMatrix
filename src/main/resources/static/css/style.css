@@ -1,120 +1,192 @@
+/* Reset default styles and set up a base font family */
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    /* overflow: hidden; Commented out to enable scrolling */
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Arial', sans-serif;
 }
 
+
+/* Styling for the startup screen */
 #startup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full height */
-    background-color: #000; /* Example background color */
-    color: #fff; /* Example text color */
-    opacity: 1; /* Start fully visible */
-    transition: opacity 1s ease-out, visibility 1s ease-out;
-    overflow: hidden; /* Ensure content does not overflow during transition */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: navy; /* Navy blue background */
+	color: #fff;
+	opacity: 1;
+	transition: opacity 1s ease-out, visibility 1s ease-out;
+	overflow: hidden;
 }
 
+/* Logo styling with a scaling transition */
 #logo {
-    font-size: 5em;
-    color: #fff;
-    transform: scale(4);
-    transition: transform 0.5s ease-out;
+	font-size: 3em;
+	color: #fff;
+	transform: scale(3);
+	transition: transform 0.5s ease-out;
 }
 
-
+/* Main content styling with opacity transition */
 #main-content {
-    visibility: hidden; /* Hidden until animation is complete */
-    opacity: 0;
-    transition: visibility 0s, opacity 1.5s linear;
-    height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 1.5s linear;
+	height: 100%;
 }
 
-/* Once the user scrolls, the following class will be added to the elements */
+/* Styles for elements when scrolled */
 .scrolled #logo {
-    transform: scale(1); /* Reset scale to normal */
+	transform: scale(1);
 }
 
 .scrolled #main-content {
-    visibility: visible;
-    opacity: 1;
-    overflow: auto; /* Allow scrolling after animation */
+	visibility: visible;
+	opacity: 1;
+	overflow: auto;
+}
+/* Navigation styling */
+nav {
+	position: fixed; /* Fix the navigation to stay in place */
+	left: 0; /* Align the navigation to the left side */
+	top: 190px; /* Add some space from the top of the page */
+	background-color: #333;
+	height: calc(100% - 50px);
+	/* Make the navigation span the remaining height of the viewport */
+	width: 150px; /* Set a fixed width for the navigation */
+	padding: 20px 0; /* Adjust padding as needed */
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    margin-bottom: 50px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 nav ul li {
-    padding: 15px 30px;
+	padding: 15px 0; /* Adjust padding as needed */
+	text-align: center; /* Center align the text */
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease;
+	text-decoration: none;
+	color: #fff;
+	transition: color 0.3s ease;
+	display: block;
+	/* Display links as block elements to occupy full width */
 }
 
 nav ul li a:hover {
-    color: #ddd;
+	color: #ddd;
 }
 
+/* Update the styling for the welcome section */
 .hero {
-    background: #e9e9e9;
-    padding: 100px 0;
+	text-align: center;
+	background: #e9e9e9;
+	padding: 50px 0; /* Adjust the padding as needed */
 }
 
+.hero p {
+	text-align: center;
+	font-size: 1.2em; /* Adjust the font size as needed */
+	max-width: 600px; /* Adjust the maximum width as needed */
+	margin: 0 auto; /* Center align text */
+}
+
+/* Service container styling */
 .service-container {
-    text-align: center;
-    padding: 20px;
+	text-align: center;
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
-#program-form label, #program-form select {
-    margin: 10px;
-    padding: 5px;
+/* Individual service styling */
+.service {
+	text-align: center;
+	width: 40%; /* Adjust the width as needed */
+	padding: 20px;
+	background: #f7f7f7;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin: 10px;
+}
+
+/* Responsive styling for smaller screens */
+@media ( max-width : 768px) {
+	.service {
+		width: 80%; /* Adjust the width for smaller screens */
+	}
+}
+
+/* Program form styling */
+#program-form label, #program-form input, #program-form button {
+	margin: 10px auto; /* Center the elements horizontally */
+	display: block;
+}
+
+#program-form {
+	text-align: center; /* Center align the form */
+	position: relative; /* Remove absolute positioning */
+	max-width: 400px; /* Set a maximum width for better visibility */
+	margin: 0 auto; /* Center the form horizontally */
 }
 
 #program-form button {
-    margin: 10px;
-    padding: 10px;
+	margin: 10px;
+	padding: 10px;
+	background-color: navy; /* Original button color */
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease; /* Add transition effect */
 }
 
-.service {
-    width: 30%;
-    padding: 20px;
-    background: #f7f7f7;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#program-form button:hover {
+	background-color: #001f3f; /* Darker shade of navy on hover */
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+#program-form button {
+	display: inline-block; /* Display the button as inline-block */
 }
 
-@media (max-width: 768px) {
-    .service-container {
-        flex-direction: column;
-        padding: 20px;
+.bottom-sections-container {
+	position: fixed; /* Fix the container to stay in place */
+	bottom: 0; /* Align the container to the bottom of the viewport */
+	left: 0; /* Align the container to the left side */
+	width: 100%;
+	/* Make the container span the full width of the viewport */
+	background-color: #c0c0c0; /* Set background color */
+	padding: 20px; /* Add padding as needed */
+	color: black; /* Set text color */
+}
+
+ /* Footer styling */
+    .footer {
+        background-color: navy; /* Set background color same as the header */
+        color: white;
+        padding: 10px 0;
+        position: absolute; /* Position the footer */
+        bottom: 0; /* Align the footer to the bottom */
+        width: 100%; /* Make the footer span the full width */
+        text-align: center; /* Center align text */
     }
 
-    .service {
-        width: 100%;
-    }
+/* Responsive styling for smaller screens */
+@media ( max-width : 768px) {
+	.service-container {
+		flex-direction: column;
+		padding: 20px;
+	}
+	.service {
+		width: 100%;
+	}
 }
 
-/* Style to hide the startup screen */
+/* Hide the startup screen when specified class is present */
 .hidden #startup {
-    opacity: 0;
-    visibility: hidden;
+	opacity: 0;
+	visibility: hidden;
 }
